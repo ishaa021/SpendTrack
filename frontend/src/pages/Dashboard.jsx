@@ -3,6 +3,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom"
 import { FaTrash } from "react-icons/fa";
 import { motion } from "framer-motion";
+import API from "../services/api";
 
 function Dashboard() {
 
@@ -33,7 +34,7 @@ const [filters, setFilters] = useState({
     try{
      const token = localStorage.getItem("token");
      const response = await axios.get(
-   "http://localhost:8000/api/transactions",
+   `${API}/transactions`,
    {
       headers: {
          Authorization: `Bearer ${token}`
@@ -55,7 +56,7 @@ setTransactions(response.data.transactions);
  async function fetchSummary() {
      try{  const token = localStorage.getItem("token");
              const response = await axios.get(
-   "http://localhost:8000/api/transactions/summary",
+   `${API}/transactions/summary`,
    {
       headers: {
          Authorization: `Bearer ${token}`
@@ -84,7 +85,7 @@ async function handleSubmit(e) {
    try {
   const token=localStorage.getItem("token");
 
-  const response=await axios.post("http://localhost:8000/api/transactions/add",
+  const response=await axios.post(`${API}/transactions/add`,
     formData,
     {
         headers:{
@@ -119,7 +120,7 @@ async function handleDelete(id){
     
     const token=localStorage.getItem("token");
 
-    const response=await axios.delete(`http://localhost:8000/api/transactions/${id}`,
+    const response=await axios.delete(`${API}/transactions/${id}`,
         {
         headers:{
             Authorization:`Bearer ${token}`,
