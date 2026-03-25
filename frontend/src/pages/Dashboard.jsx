@@ -195,8 +195,8 @@ className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 te
 
         <div>
          <div className="flex items-center gap-2">
-  <h1 className="text-xl font-semibold tracking-wide">
-    SpendTrack
+<h1 className="text-3xl md:text-4xl font-bold tracking-wide">
+      SpendTrack
   </h1>
   <span className="text-lg">📊</span>
 </div>
