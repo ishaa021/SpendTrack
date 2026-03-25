@@ -62,7 +62,7 @@ return (
       <div className="bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl rounded-2xl p-8 w-full max-w-md">
 
         <h2 className="text-3xl font-bold text-white text-center mb-6">
-          Create Account ✨
+          Create Account 
         </h2>
 
         {error && (

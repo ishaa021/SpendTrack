@@ -171,46 +171,51 @@ return (
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.5 }}
-  className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white p-6"
+className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white pt-0 px-6 pb-6"
 >
 
 
+
 {/* HEADER */}
-<div className="relative mb-10 rounded-2xl overflow-hidden">
+<div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-10">
 
-  {/* Background Gradient */}
-  <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-black to-pink-900 opacity-80"></div>
+  <div className="relative overflow-hidden border-b border-white/10 
+  bg-gradient-to-r from-gray-900 via-black to-gray-900">
 
-  {/* Texture */}
-  <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/noise.png')]"></div>
+    {/* Glow Effects */}
+    <div className="absolute w-72 h-72 bg-pink-500 blur-3xl opacity-20 top-0 left-10"></div>
+    <div className="absolute w-72 h-72 bg-purple-500 blur-3xl opacity-20 bottom-0 right-10"></div>
 
-  {/* Glow Effect */}
-  <div className="absolute w-72 h-72 bg-pink-500 blur-3xl opacity-20 top-0 left-10"></div>
-  <div className="absolute w-72 h-72 bg-purple-500 blur-3xl opacity-20 bottom-0 right-10"></div>
+    {/* Content */}
+    <div className="relative z-10 flex justify-between items-center px-8 py-4">
 
-  {/* Content */}
-  <div className="relative z-10 flex justify-between items-center px-6 py-5">
+      {/* Left */}
+      <div className="flex items-center gap-3">
+       
 
-    <div>
-      <h1 className="text-2xl font-bold tracking-wide">
-       <div className="flex items-center gap-2">
- 
-  <h1 className="text-2xl font-bold">SpendTrack </h1>
-   <span className="text-2xl">📊 </span>
+        <div>
+         <div className="flex items-center gap-2">
+  <h1 className="text-xl font-semibold tracking-wide">
+    SpendTrack
+  </h1>
+  <span className="text-lg">📊</span>
 </div>
-      </h1>
-      <p className="text-gray-300 text-sm">
-        Manage your money smartly ✨
-      </p>
+          <p className="text-xs text-gray-400">
+            Manage your money smartly ✨
+          </p>
+        </div>
+      </div>
+
+      {/* Right */}
+      <button
+        onClick={handleLogout}
+        className="px-4 py-2 rounded-lg bg-white/10 
+        hover:bg-white/20 active:scale-95 transition border border-white/10"
+      >
+        Logout
+      </button>
+
     </div>
-
-    <button
-      onClick={handleLogout}
-      className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 active:scale-95 transition"
-    >
-      Logout
-    </button>
-
   </div>
 </div>
 
@@ -304,7 +309,7 @@ transition-all duration-300">
         type="submit"
         className="w-full py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90 active:scale-95 transition"
       >
-        Add Transaction
+      Add Transaction
       </button>
 
     </form>
